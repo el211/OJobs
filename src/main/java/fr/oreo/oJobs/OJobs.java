@@ -11,7 +11,8 @@ import fr.oreo.oJobs.utils.MessageUtil;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-
+import net.byteflux.libby.BukkitLibraryManager;
+import net.byteflux.libby.Library;
 
 public final class OJobs extends JavaPlugin {
 
@@ -30,7 +31,10 @@ public final class OJobs extends JavaPlugin {
     private boolean vaultEnabled = false;
     private boolean pApiEnabled  = false;
 
-
+    @Override
+    public void onLoad() {
+        loadExternalLibraries();
+    }
     @Override
     public void onEnable() {
         instance = this;
@@ -97,7 +101,26 @@ public final class OJobs extends JavaPlugin {
         }
         getLogger().info("oJobs disabled. All player data saved.");
     }
+    private void loadExternalLibraries() {
+        try {
+            BukkitLibraryManager libraryManager = new BukkitLibraryManager(this);
+            libraryManager.addMavenCentral();
 
+            libraryManager.loadLibrary(Library.builder().groupId("org.mongodb").artifactId("bson").version("4.11.1").build());
+            libraryManager.loadLibrary(Library.builder().groupId("org.mongodb").artifactId("mongodb-driver-core").version("4.11.1").build());
+            libraryManager.loadLibrary(Library.builder().groupId("org.mongodb").artifactId("mongodb-driver-sync").version("4.11.1").build());
+
+            libraryManager.loadLibrary(Library.builder().groupId("com.zaxxer").artifactId("HikariCP").version("5.0.1").build());
+            libraryManager.loadLibrary(Library.builder().groupId("com.mysql").artifactId("mysql-connector-j").version("8.3.0").build());
+            libraryManager.loadLibrary(Library.builder().groupId("org.xerial").artifactId("sqlite-jdbc").version("3.44.1.0").build());
+
+            getLogger().info("[LibraryLoader] All dependencies loaded successfully!");
+        } catch (Exception e) {
+            getLogger().severe("[LibraryLoader] FAILED: " + e.getMessage());
+            e.printStackTrace();
+            getServer().getPluginManager().disablePlugin(this);
+        }
+    }
 
     public void reload() {
         configManager.loadAll();
