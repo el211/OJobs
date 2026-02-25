@@ -1,0 +1,396 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                   🌾 FARMER JOB                         ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "🌾 Farmer"
+description:
+  - "<gray>Harvest crops and grow farms to earn XP."
+  - "<gray>Master the land and feed the server!"
+  - ""
+  - "<yellow>Actions: <white>Farming & Harvesting"
+
+icon: WHEAT
+custom-model-data: -1
+color: "<green>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+worlds:
+  whitelist: []
+  blacklist:
+    - "world_the_end"
+
+cooldowns:
+  farming: 0
+
+actions:
+  farming:
+    WHEAT:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    CARROTS:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    POTATOES:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    BEETROOTS:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    PUMPKIN:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    MELON:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    SUGAR_CANE:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    BAMBOO:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    CACTUS:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    NETHER_WART:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 5
+    COCOA:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 3
+    SWEET_BERRY_BUSH:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    GLOW_BERRIES:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 4
+    PITCHER_PLANT:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 8
+    TORCHFLOWER:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 8
+
+rewards:
+  0:
+    1:
+      money: 50
+      commands: []
+      items:
+        - "WHEAT_SEEDS 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "BONE_MEAL 16"
+        - "CARROT 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 175
+      commands: []
+      items:
+        - "PUMPKIN_SEEDS 16"
+        - "MELON_SEEDS 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 300
+      commands: []
+      items:
+        - "BREAD 16"
+        - "BONE_MEAL 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Farmer level 5!"
+      items:
+        - "GOLDEN_HOE 1"
+        - "NETHER_WART 16"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "PUMPKIN 8"
+        - "MELON 8"
+        - "SUGAR_CANE 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "DIAMOND_HOE 1"
+        - "BONE_MEAL 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "TORCHFLOWER_SEEDS 4"
+        - "PITCHER_POD 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "WHEAT 64"
+        - "POTATO 32"
+        - "CARROT 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Farmer level 10! Halfway to mastery!"
+      items:
+        - "GOLDEN_APPLE 4"
+        - "ENCHANTED_GOLDEN_APPLE 1"
+      permissions:
+        - "ojobs.farmer.replant"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "BROWN_MUSHROOM_BLOCK 16"
+        - "RED_MUSHROOM_BLOCK 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "COOKIE 32"
+        - "PUMPKIN_PIE 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "WHEAT 128"
+        - "BONE_MEAL 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "BEETROOT_SOUP 8"
+        - "MUSHROOM_STEW 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Farmer level 15!"
+      items:
+        - "NETHERITE_HOE 1"
+        - "GOLDEN_APPLE 16"
+      permissions:
+        - "ojobs.farmer.autoplant"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "WHEAT 128"
+        - "SUGAR_CANE 64"
+        - "BAMBOO 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "ENCHANTED_GOLDEN_APPLE 4"
+        - "GLOW_BERRIES 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "GOLDEN_APPLE 32"
+        - "MELON_BLOCK 8"
+        - "PUMPKIN 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "ENCHANTED_GOLDEN_APPLE 8"
+        - "NETHERITE_HOE 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Farmer job!"
+        - "give %player% netherite_hoe{Enchantments:[{id:efficiency,lvl:5},{id:fortune,lvl:3},{id:unbreaking,lvl:3},{id:mending,lvl:1}]} 1"
+      items:
+        - "ENCHANTED_GOLDEN_APPLE 16"
+        - "WHEAT_BLOCK 4"
+        - "MELON_BLOCK 4"
+      permissions:
+        - "ojobs.farmer.master"
+        - "ojobs.farmer.growthboost"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+
+  1:
+    1:
+      money: 0
+      commands: []
+      items:
+        - "ENCHANTED_GOLDEN_APPLE 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    5:
+      money: 750
+      commands: []
+      items:
+        - "NETHERITE_HOE 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    10:
+      money: 5000
+      commands:
+        - "say %player% reached Farmer P1 level 10!"
+      items:
+        - "ENCHANTED_GOLDEN_APPLE 8"
+      permissions:
+        - "ojobs.farmer.p1.replant"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    20:
+      money: 75000
+      commands:
+        - "say %player% has MASTERED Farmer Prestige 1!"
+      items:
+        - "ENCHANTED_GOLDEN_APPLE 32"
+        - "WHEAT_BLOCK 8"
+      permissions:
+        - "ojobs.farmer.p1.master"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8

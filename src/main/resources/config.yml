@@ -1,0 +1,95 @@
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║                   oJobs — Main Configuration                 ║
+# ║  This file controls core plugin behaviour.                   ║
+# ║  Reload with /jobs reload                                    ║
+# ╚═══════════════════════════════════════════════════════════════╝
+
+# ── General settings ───────────────────────────────────────────────
+settings:
+  # Maximum number of jobs a player can have simultaneously
+  max-jobs: 3
+
+  # Enable/disable ActionBar XP notifications
+  actionbar-enabled: true
+
+  # Minimum time (ms) between ActionBar XP messages per player
+  notification-cooldown: 2000
+
+  # Enable/disable title messages (level-up, prestige)
+  title-enabled: true
+  title-fade-in: 10      # ticks
+  title-stay: 60         # ticks
+  title-fade-out: 20     # ticks
+
+  # Broadcast level-ups to the whole server
+  broadcast-levelup: false
+  # Only broadcast every N levels (e.g. 5 = broadcast at 5, 10, 15...)
+  broadcast-levelup-interval: 5
+
+  # Sound effects (Bukkit Sound enum names)
+  sounds:
+    job-join: "ENTITY_PLAYER_LEVELUP"
+    job-leave: "BLOCK_NOTE_BLOCK_BASS"
+    level-up: "UI_TOAST_CHALLENGE_COMPLETE"
+    prestige: "UI_TOAST_CHALLENGE_COMPLETE"
+
+# ── XP Multipliers ────────────────────────────────────────────────
+xp:
+  # Base multiplier applied to ALL XP gains (1.0 = no change)
+  global-multiplier: 1.0
+
+  # Permission-based multipliers (highest matching value wins)
+  # Players with the permission receive this multiplier instead of global
+  permission-multipliers:
+    ojobs.multiplier.vip: 1.25
+    ojobs.multiplier.mvp: 1.5
+    ojobs.multiplier.elite: 2.0
+
+  # Booster limits
+  boosters:
+    max-global: 3
+    max-per-job: 5
+    max-per-player: 3
+
+# ── Prestige System ───────────────────────────────────────────────
+prestige:
+  enabled: true
+
+  # Max prestige level (per job)
+  max-prestige: 10
+
+  # Reset level to 1 on prestige?
+  reset-level: true
+
+  # Reset XP to 0 on prestige?
+  reset-xp: true
+
+  # Bonus XP multiplier per prestige level (additive)
+  # e.g. 0.1 = +10% per prestige → prestige 3 = +30% XP
+  xp-bonus-per-prestige: 0.10
+
+  # Rewards granted at specific prestige levels
+  # You can define money and/or commands for each prestige milestone
+  rewards:
+    1:
+      money: 5000
+      commands:
+        - "say %player% prestiged for the first time!"
+    3:
+      money: 15000
+      commands: []
+    5:
+      money: 50000
+      commands:
+        - "say %player% reached Prestige 5!"
+    10:
+      money: 200000
+      commands:
+        - "say %player% reached MAX PRESTIGE!"
+
+# ── Leaderboard ───────────────────────────────────────────────────
+leaderboard:
+  # Number of entries per leaderboard page
+  size: 10
+  # How often (seconds) to refresh the cached leaderboard data
+  refresh-interval: 300

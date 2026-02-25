@@ -1,0 +1,579 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                   ⚔ HUNTER JOB                         ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "⚔ Hunter"
+description:
+  - "<gray>Slay mobs and monsters to earn XP."
+  - "<gray>The stronger the mob, the bigger the reward!"
+  - ""
+  - "<yellow>Actions: <white>Mob Killing"
+
+icon: IRON_SWORD
+custom-model-data: -1
+color: "<red>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+worlds:
+  whitelist: []
+  blacklist: []
+
+cooldowns:
+  mob-kill: 0
+
+actions:
+  mob-kill:
+    # ── Passive & Common ─────────────────────────────────────
+    COW:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    PIG:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    SHEEP:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    CHICKEN:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    RABBIT:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    SQUID:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    GLOW_SQUID:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 0
+    COD:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    SALMON:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    TURTLE:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    FOX:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    BAT:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    HORSE:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    DONKEY:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    LLAMA:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    PANDA:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 3
+    POLAR_BEAR:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 4
+    WOLF:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    CAT:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    MOOSHROOM:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    AXOLOTL:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    GOAT:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    FROG:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 1
+    CAMEL:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+
+    # ── Hostile ──────────────────────────────────────────────
+    ZOMBIE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 0
+    SKELETON:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 0
+    CREEPER:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 1
+    SPIDER:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 0
+    CAVE_SPIDER:
+      xp: 9.0
+      chance: 1.0
+      level-requirement: 2
+    ENDERMAN:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 5
+    WITCH:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 4
+    SLIME:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    MAGMA_CUBE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 3
+    BLAZE:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 6
+    GHAST:
+      xp: 18.0
+      chance: 1.0
+      level-requirement: 7
+    ZOMBIE_PIGLIN:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 5
+    WITHER_SKELETON:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 8
+    PIGLIN:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 4
+    PIGLIN_BRUTE:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 8
+    HOGLIN:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 6
+    ZOGLIN:
+      xp: 18.0
+      chance: 1.0
+      level-requirement: 7
+    HUSK:
+      xp: 9.0
+      chance: 1.0
+      level-requirement: 2
+    STRAY:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 3
+    DROWNED:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 3
+    PHANTOM:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 5
+    RAVAGER:
+      xp: 35.0
+      chance: 1.0
+      level-requirement: 10
+    PILLAGER:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 5
+    VINDICATOR:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 6
+    EVOKER:
+      xp: 25.0
+      chance: 1.0
+      level-requirement: 9
+    VEX:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 4
+    SILVERFISH:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    ENDERMITE:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    GUARDIAN:
+      xp: 18.0
+      chance: 1.0
+      level-requirement: 7
+    ELDER_GUARDIAN:
+      xp: 50.0
+      chance: 1.0
+      level-requirement: 12
+    SHULKER:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 10
+    BREEZE:
+      xp: 25.0
+      chance: 1.0
+      level-requirement: 10
+    BOGGED:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 3
+
+    # ── Bosses ───────────────────────────────────────────────
+    WITHER:
+      xp: 200.0
+      chance: 1.0
+      level-requirement: 15
+    ELDER_GUARDIAN:
+      xp: 50.0
+      chance: 1.0
+      level-requirement: 12
+    ENDER_DRAGON:
+      xp: 500.0
+      chance: 1.0
+      level-requirement: 18
+
+rewards:
+  0:
+    1:
+      money: 50
+      commands: []
+      items:
+        - "IRON_SWORD 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "ARROW 32"
+        - "LEATHER_CHESTPLATE 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 175
+      commands: []
+      items:
+        - "BOW 1"
+        - "ARROW 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 300
+      commands: []
+      items:
+        - "IRON_CHESTPLATE 1"
+        - "IRON_SWORD 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Hunter level 5!"
+      items:
+        - "DIAMOND_SWORD 1"
+        - "BLAZE_ROD 8"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "DIAMOND_CHESTPLATE 1"
+        - "ENDER_PEARL 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "CROSSBOW 1"
+        - "GHAST_TEAR 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "WITHER_SKELETON_SKULL 1"
+        - "NETHER_STAR 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "DIAMOND_SWORD 1"
+        - "TOTEM_OF_UNDYING 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Hunter level 10! Halfway to mastery!"
+      items:
+        - "DIAMOND_SWORD 1"
+        - "TOTEM_OF_UNDYING 2"
+        - "NETHER_STAR 2"
+      permissions:
+        - "ojobs.hunter.tracking"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "NETHERITE_SWORD 1"
+        - "ENDER_PEARL 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "TRIDENT 1"
+        - "NAUTILUS_SHELL 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "TOTEM_OF_UNDYING 4"
+        - "NETHERITE_SWORD 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "WITHER_SKELETON_SKULL 2"
+        - "NETHER_STAR 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Hunter level 15!"
+      items:
+        - "NETHERITE_CHESTPLATE 1"
+        - "TOTEM_OF_UNDYING 6"
+      permissions:
+        - "ojobs.hunter.lootboost"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "NETHERITE_SWORD 1"
+        - "NETHERITE_BOW 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "NETHER_STAR 8"
+        - "TOTEM_OF_UNDYING 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "NETHERITE_CHESTPLATE 1"
+        - "NETHERITE_HELMET 1"
+        - "TOTEM_OF_UNDYING 10"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "NETHERITE_SWORD 1"
+        - "NETHER_STAR 12"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Hunter job!"
+        - "give %player% netherite_sword{Enchantments:[{id:sharpness,lvl:5},{id:looting,lvl:3},{id:unbreaking,lvl:3},{id:mending,lvl:1}]} 1"
+      items:
+        - "TOTEM_OF_UNDYING 16"
+        - "NETHER_STAR 16"
+        - "NETHERITE_INGOT 4"
+      permissions:
+        - "ojobs.hunter.master"
+        - "ojobs.hunter.mobsense"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+
+  1:
+    1:
+      money: 0
+      commands: []
+      items:
+        - "TOTEM_OF_UNDYING 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    5:
+      money: 1000
+      commands: []
+      items:
+        - "NETHERITE_SWORD 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    10:
+      money: 5000
+      commands:
+        - "say %player% reached Hunter P1 level 10!"
+      items:
+        - "TOTEM_OF_UNDYING 8"
+        - "NETHER_STAR 8"
+      permissions:
+        - "ojobs.hunter.p1.tracking"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    20:
+      money: 75000
+      commands:
+        - "say %player% has MASTERED Hunter Prestige 1!"
+      items:
+        - "TOTEM_OF_UNDYING 32"
+        - "NETHER_STAR 32"
+      permissions:
+        - "ojobs.hunter.p1.master"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8

@@ -1,0 +1,419 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                   🎣 FISHER JOB                         ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "🎣 Fisher"
+description:
+  - "<gray>Cast your line and reel in rewards."
+  - "<gray>Rare catches bring bonus XP!"
+  - ""
+  - "<yellow>Actions: <white>Fishing"
+
+icon: FISHING_ROD
+custom-model-data: -1
+color: "<aqua>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+worlds:
+  whitelist: []
+  blacklist: []
+
+cooldowns:
+  fishing: 0
+
+actions:
+  fishing:
+    COD:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    SALMON:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 0
+    TROPICAL_FISH:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    PUFFERFISH:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    FISH:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    # Treasure catches (junk/treasure items share material names)
+    BOW:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 4
+    FISHING_ROD:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 4
+    NAME_TAG:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 6
+    SADDLE:
+      xp: 18.0
+      chance: 1.0
+      level-requirement: 5
+    NAUTILUS_SHELL:
+      xp: 25.0
+      chance: 1.0
+      level-requirement: 8
+    LILY_PAD:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    INK_SAC:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    TRIPWIRE_HOOK:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    LEATHER:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 0
+    LEATHER_BOOTS:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 0
+    ROTTEN_FLESH:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    BONE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    STICK:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    STRING:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    WATER_BUCKET:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    ENCHANTED_BOOK:
+      xp: 30.0
+      chance: 1.0
+      level-requirement: 10
+
+rewards:
+  0:
+    1:
+      money: 50
+      commands: []
+      items:
+        - "FISHING_ROD 1"
+        - "COD 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "SALMON 8"
+        - "COOKED_COD 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 175
+      commands: []
+      items:
+        - "TROPICAL_FISH 8"
+        - "PUFFERFISH 4"
+        - "LILY_PAD 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 300
+      commands: []
+      items:
+        - "INK_SAC 16"
+        - "COOKED_SALMON 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Fisher level 5!"
+      items:
+        - "SADDLE 1"
+        - "NAME_TAG 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "NAUTILUS_SHELL 2"
+        - "GLOW_INK_SAC 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "HEART_OF_THE_SEA 1"
+        - "NAUTILUS_SHELL 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "CONDUIT 1"
+        - "PRISMARINE_CRYSTALS 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "NAUTILUS_SHELL 8"
+        - "SPONGE 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Fisher level 10!"
+      items:
+        - "ENCHANTED_BOOK 2"
+        - "HEART_OF_THE_SEA 2"
+      permissions:
+        - "ojobs.fisher.luckofthesea"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "SPONGE 8"
+        - "PRISMARINE 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "NAUTILUS_SHELL 16"
+        - "HEART_OF_THE_SEA 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "ENCHANTED_BOOK 4"
+        - "SPONGE 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "CONDUIT 2"
+        - "NAUTILUS_SHELL 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Fisher level 15!"
+      items:
+        - "ENCHANTED_BOOK 8"
+        - "HEART_OF_THE_SEA 6"
+      permissions:
+        - "ojobs.fisher.doublecast"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "CONDUIT 3"
+        - "SPONGE 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "ENCHANTED_BOOK 12"
+        - "HEART_OF_THE_SEA 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "CONDUIT 4"
+        - "NAUTILUS_SHELL 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "ENCHANTED_BOOK 16"
+        - "HEART_OF_THE_SEA 10"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Fisher job!"
+        - "give %player% fishing_rod{Enchantments:[{id:luck_of_the_sea,lvl:3},{id:lure,lvl:3},{id:unbreaking,lvl:3},{id:mending,lvl:1}]} 1"
+      items:
+        - "CONDUIT 6"
+        - "HEART_OF_THE_SEA 16"
+        - "ENCHANTED_BOOK 16"
+      permissions:
+        - "ojobs.fisher.master"
+        - "ojobs.fisher.treasuresense"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+
+  1:
+    1:
+      money: 0
+      commands: []
+      items:
+        - "HEART_OF_THE_SEA 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    5:
+      money: 1000
+      commands: []
+      items:
+        - "CONDUIT 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    10:
+      money: 5000
+      commands:
+        - "say %player% reached Fisher P1 level 10!"
+      items:
+        - "ENCHANTED_BOOK 8"
+        - "HEART_OF_THE_SEA 8"
+      permissions:
+        - "ojobs.fisher.p1.luckofthesea"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    20:
+      money: 75000
+      commands:
+        - "say %player% has MASTERED Fisher Prestige 1!"
+      items:
+        - "CONDUIT 8"
+        - "HEART_OF_THE_SEA 32"
+      permissions:
+        - "ojobs.fisher.p1.master"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8

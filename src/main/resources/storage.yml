@@ -1,0 +1,60 @@
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║                oJobs — Storage Configuration                 ║
+# ║  Choose your storage backend and configure its settings.     ║
+# ╚═══════════════════════════════════════════════════════════════╝
+
+# Storage type: YAML | SQLITE | MYSQL | MONGODB
+# • YAML    — Flat-file, one file per player. Good for small servers.
+# • SQLITE  — Single-file database. Good for medium servers.
+# • MYSQL   — Remote database with connection pooling. Best for large/multi-server.
+# • MONGODB — NoSQL document database. Good for large-scale and flexible schemas.
+type: YAML
+
+# Auto-save interval in seconds (applies to all backends)
+# Dirty player data is flushed to storage on this interval
+auto-save-interval: 300
+
+# ── YAML settings ─────────────────────────────────────────────────
+yaml:
+  # Folder name inside the plugin directory
+  folder: "data"
+
+# ── SQLite settings ───────────────────────────────────────────────
+sqlite:
+  # Database file name (inside plugin directory)
+  file: "data.db"
+
+# ── MySQL / MariaDB settings ──────────────────────────────────────
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "ojobs"
+  username: "root"
+  password: ""
+  use-ssl: false
+  table-prefix: "ojobs_"
+
+  # HikariCP connection pool settings
+  pool:
+    maximum-pool-size: 10
+    minimum-idle: 5
+    connection-timeout: 30000      # ms
+    idle-timeout: 600000           # ms
+    max-lifetime: 1800000          # ms
+
+# ── MongoDB settings ──────────────────────────────────────────────
+mongodb:
+  # Connection URI (overrides host/port/credentials if set)
+  # Examples:
+  #   mongodb://localhost:27017
+  #   mongodb+srv://user:pass@cluster.example.net
+  #   mongodb://user:pass@host1:27017,host2:27017/?replicaSet=rs0
+  connection-uri: "mongodb://localhost:27017"
+
+  # Database name
+  database: "ojobs"
+
+  # Collection names
+  collections:
+    players: "players"
+    job-data: "job_data"

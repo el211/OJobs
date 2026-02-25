@@ -1,0 +1,51 @@
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║                 oJobs — Language Configuration               ║
+# ║  All player-facing messages. Supports MiniMessage format.    ║
+# ║  Use <placeholder> tags for dynamic values.                  ║
+# ╚═══════════════════════════════════════════════════════════════╝
+
+# Prefix prepended to all plugin messages
+prefix: "<dark_gray>[<gold>Jobs</gold>]</dark_gray> "
+
+messages:
+
+  # ── Job join / leave ─────────────────────────────────────────────
+  job-join: "<green>You joined <yellow><job></yellow>!"
+  job-leave: "<red>You left <yellow><job></yellow>."
+  already-in-job: "<red>You are already in <yellow><job></yellow>."
+  not-in-job: "<red>You are not in <yellow><job></yellow>."
+  max-jobs-reached: "<red>You can only have <yellow><max></yellow> jobs at a time."
+  job-full: "<red><yellow><job></yellow> is full! No more players can join."
+  job-not-found: "<red>Job '<yellow><job></yellow>' does not exist."
+  no-permission-job: "<red>You don't have permission to join <yellow><job></yellow>."
+  data-not-loaded: "<red>Your data is still loading. Please wait a moment."
+
+  # ── XP gain (ActionBar) ──────────────────────────────────────────
+  # Placeholders: <xp> <job> <level> <current_xp> <xp_required> <progress> <progress_bar> <prestige> <max_level> <total_xp>
+  xp-gain-actionbar: "<gray>+<green><xp> XP</green> <dark_gray>(<yellow><job></yellow>)</dark_gray> <gray>Lv.<white><level></white> <dark_gray>[<green><current_xp></green><dark_gray>/<gray><xp_required></gray>]</dark_gray> <progress_bar>"
+  xp-progress-actionbar: "<dark_gray>(<yellow><job></yellow>)</dark_gray> <gray>Lv.<white><level></white> <dark_gray>[<green><current_xp></green><dark_gray>/<gray><xp_required></gray>]</dark_gray> <progress_bar>"
+
+  # ── Level up ─────────────────────────────────────────────────────
+  level-up-title: "<gold>⬆ Level Up!"
+  level-up-subtitle: "<yellow><job></yellow> <gray>Level <gold><level></gold>"
+  level-up-broadcast: "<gold><player></gold> <yellow>reached level <gold><level></gold> <yellow>in <gold><job></gold><yellow>!"
+
+  # ── Prestige ─────────────────────────────────────────────────────
+  prestige-title: "<gold>⭐ Prestige!"
+  prestige-subtitle: "<yellow>Prestige <gold><prestige></gold>"
+  prestige-success: "<green>You prestiged in <yellow><job></yellow>! You are now prestige <gold><prestige></gold>."
+  prestige-not-ready: "<red>You need to be max level (<yellow><level></yellow>) in <yellow><job></yellow> to prestige."
+  prestige-broadcast: "<gold>⭐ <yellow><player></yellow> prestiged in <gold><job></gold>! <yellow>(Prestige <gold><prestige></gold>)"
+
+  # ── Admin ────────────────────────────────────────────────────────
+  reload-success: "<green>oJobs reloaded successfully!"
+  leaderboard-refreshed: "<green>Leaderboard data refreshed."
+
+  # ── Booster ──────────────────────────────────────────────────────
+  booster-activated: "<gold>✦ <yellow>An XP booster is now active! <gold>x<multiplier></gold> <yellow>for <gold><duration></gold>"
+  booster-expired: "<gray>An XP booster has expired."
+
+  # ── Errors ───────────────────────────────────────────────────────
+  no-permission: "<red>You don't have permission to do that."
+  player-not-found: "<red>Player '<yellow><player></yellow>' not found."
+  invalid-usage: "<red>Invalid usage. Type <yellow>/jobs help</yellow> for help."

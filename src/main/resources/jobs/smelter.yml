@@ -1,0 +1,439 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                  🔥 SMELTER JOB                         ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "🔥 Smelter"
+description:
+  - "<gray>Smelt ores and cook food to earn XP."
+  - "<gray>Run your furnaces around the clock!"
+  - ""
+  - "<yellow>Actions: <white>Smelting & Cooking"
+
+icon: FURNACE
+custom-model-data: -1
+color: "<gold>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+worlds:
+  whitelist: []
+  blacklist: []
+
+cooldowns:
+  smelting: 0
+
+actions:
+  smelting:
+    # ── Metals ───────────────────────────────────────────────
+    IRON_INGOT:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    GOLD_INGOT:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    COPPER_INGOT:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 0
+    # ── Glass & Sand ─────────────────────────────────────────
+    GLASS:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    # ── Stone variants ────────────────────────────────────────
+    STONE:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    SMOOTH_STONE:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    SMOOTH_SANDSTONE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 1
+    SMOOTH_RED_SANDSTONE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 1
+    SMOOTH_QUARTZ:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 4
+    BRICKS:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    CRACKED_STONE_BRICKS:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    POLISHED_BLACKSTONE_BRICKS:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 4
+    # ── Food ─────────────────────────────────────────────────
+    COOKED_BEEF:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    COOKED_PORKCHOP:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    COOKED_CHICKEN:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    COOKED_COD:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    COOKED_SALMON:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    COOKED_MUTTON:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    COOKED_RABBIT:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    BAKED_POTATO:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    DRIED_KELP:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    # ── Special ──────────────────────────────────────────────
+    NETHERITE_SCRAP:
+      xp: 50.0
+      chance: 1.0
+      level-requirement: 15
+    SPONGE:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 8
+    CHARCOAL:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    TERRACOTTA:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 2
+
+rewards:
+  0:
+    1:
+      money: 50
+      commands: []
+      items:
+        - "FURNACE 2"
+        - "COAL 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "IRON_INGOT 16"
+        - "COAL 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 175
+      commands: []
+      items:
+        - "BLAST_FURNACE 1"
+        - "IRON_INGOT 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 300
+      commands: []
+      items:
+        - "GOLD_INGOT 8"
+        - "COPPER_INGOT 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Smelter level 5!"
+      items:
+        - "GOLD_INGOT 16"
+        - "BLAST_FURNACE 2"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "SMOOTH_QUARTZ 32"
+        - "GOLD_INGOT 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "GOLD_BLOCK 2"
+        - "IRON_BLOCK 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "GOLD_BLOCK 4"
+        - "WET_SPONGE 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "GOLD_BLOCK 6"
+        - "IRON_BLOCK 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Smelter level 10!"
+      items:
+        - "GOLD_BLOCK 8"
+        - "IRON_BLOCK 16"
+        - "LAVA_BUCKET 2"
+      permissions:
+        - "ojobs.smelter.autofuel"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "NETHERITE_SCRAP 1"
+        - "GOLD_BLOCK 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "NETHERITE_SCRAP 2"
+        - "GOLD_BLOCK 12"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "NETHERITE_SCRAP 3"
+        - "IRON_BLOCK 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "NETHERITE_SCRAP 4"
+        - "GOLD_BLOCK 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Smelter level 15!"
+      items:
+        - "NETHERITE_INGOT 1"
+        - "GOLD_BLOCK 16"
+      permissions:
+        - "ojobs.smelter.overdrive"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 2"
+        - "GOLD_BLOCK 20"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 3"
+        - "GOLD_BLOCK 24"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 4"
+        - "GOLD_BLOCK 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 6"
+        - "GOLD_BLOCK 48"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Smelter job!"
+      items:
+        - "NETHERITE_INGOT 8"
+        - "GOLD_BLOCK 64"
+        - "IRON_BLOCK 64"
+      permissions:
+        - "ojobs.smelter.master"
+        - "ojobs.smelter.supersmelt"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+
+  1:
+    1:
+      money: 0
+      commands: []
+      items:
+        - "NETHERITE_INGOT 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    5:
+      money: 1000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 4"
+        - "GOLD_BLOCK 16"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    10:
+      money: 5000
+      commands:
+        - "say %player% reached Smelter P1 level 10!"
+      items:
+        - "NETHERITE_INGOT 8"
+        - "GOLD_BLOCK 32"
+      permissions:
+        - "ojobs.smelter.p1.autofuel"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    20:
+      money: 75000
+      commands:
+        - "say %player% has MASTERED Smelter Prestige 1!"
+      items:
+        - "NETHERITE_BLOCK 8"
+        - "GOLD_BLOCK 64"
+      permissions:
+        - "ojobs.smelter.p1.master"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8

@@ -1,0 +1,480 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                  🪓 WOODCUTTER JOB                      ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "🪓 Woodcutter"
+description:
+  - "<gray>Chop trees and collect wood to earn XP."
+  - "<gray>Rare woods bring greater rewards!"
+  - ""
+  - "<yellow>Actions: <white>Block Breaking"
+
+icon: OAK_LOG
+custom-model-data: -1
+color: "<gold>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+worlds:
+  whitelist: []
+  blacklist: []
+
+cooldowns:
+  block-break: 0
+
+actions:
+  block-break:
+    # ── Overworld Logs ───────────────────────────────────────
+    OAK_LOG:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    SPRUCE_LOG:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    BIRCH_LOG:
+      xp: 3.5
+      chance: 1.0
+      level-requirement: 0
+    JUNGLE_LOG:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    ACACIA_LOG:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    DARK_OAK_LOG:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    MANGROVE_LOG:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 4
+    CHERRY_LOG:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 5
+    # ── Stripped Logs ────────────────────────────────────────
+    STRIPPED_OAK_LOG:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 0
+    STRIPPED_SPRUCE_LOG:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 0
+    STRIPPED_BIRCH_LOG:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    STRIPPED_JUNGLE_LOG:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 2
+    STRIPPED_ACACIA_LOG:
+      xp: 3.5
+      chance: 1.0
+      level-requirement: 1
+    STRIPPED_DARK_OAK_LOG:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 2
+    STRIPPED_MANGROVE_LOG:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 4
+    STRIPPED_CHERRY_LOG:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 5
+    # ── Nether Wood ──────────────────────────────────────────
+    CRIMSON_STEM:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 6
+    WARPED_STEM:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 6
+    STRIPPED_CRIMSON_STEM:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 6
+    STRIPPED_WARPED_STEM:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 6
+    # ── Leaves & Misc ────────────────────────────────────────
+    OAK_LEAVES:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    SPRUCE_LEAVES:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    BIRCH_LEAVES:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    JUNGLE_LEAVES:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    ACACIA_LEAVES:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    DARK_OAK_LEAVES:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    MANGROVE_LEAVES:
+      xp: 0.8
+      chance: 1.0
+      level-requirement: 0
+    CHERRY_LEAVES:
+      xp: 0.8
+      chance: 1.0
+      level-requirement: 0
+    AZALEA_LEAVES:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 3
+    FLOWERING_AZALEA_LEAVES:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 3
+    BROWN_MUSHROOM_BLOCK:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 4
+    RED_MUSHROOM_BLOCK:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 4
+    MUSHROOM_STEM:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 4
+    # ── Wood Planks (crafted, low XP) ─────────────────────────
+    OAK_WOOD:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    SPRUCE_WOOD:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+
+rewards:
+  0:
+    1:
+      money: 50
+      commands: []
+      items:
+        - "STONE_AXE 1"
+        - "OAK_LOG 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "IRON_AXE 1"
+        - "BIRCH_LOG 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 175
+      commands: []
+      items:
+        - "OAK_SAPLING 16"
+        - "SPRUCE_SAPLING 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 300
+      commands: []
+      items:
+        - "ACACIA_LOG 16"
+        - "DARK_OAK_LOG 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Woodcutter level 5!"
+      items:
+        - "DIAMOND_AXE 1"
+        - "JUNGLE_LOG 32"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "CRIMSON_STEM 16"
+        - "WARPED_STEM 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "MANGROVE_LOG 16"
+        - "MANGROVE_PROPAGULE 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "CHERRY_LOG 16"
+        - "CHERRY_SAPLING 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "BROWN_MUSHROOM_BLOCK 16"
+        - "RED_MUSHROOM_BLOCK 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Woodcutter level 10!"
+      items:
+        - "DIAMOND_AXE 1"
+        - "CHERRY_LOG 32"
+        - "AZALEA 8"
+      permissions:
+        - "ojobs.woodcutter.treefeller"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "CRIMSON_STEM 32"
+        - "WARPED_STEM 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "OAK_LOG 128"
+        - "JUNGLE_LOG 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "CHERRY_LOG 64"
+        - "MANGROVE_LOG 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "DIAMOND_AXE 1"
+        - "CRIMSON_STEM 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Woodcutter level 15!"
+      items:
+        - "NETHERITE_AXE 1"
+        - "CHERRY_LOG 64"
+      permissions:
+        - "ojobs.woodcutter.leafdecay"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "CHERRY_LOG 128"
+        - "MANGROVE_LOG 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "NETHERITE_AXE 1"
+        - "CRIMSON_STEM 128"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "OAK_LOG 256"
+        - "CHERRY_LOG 64"
+        - "MUSHROOM_STEM 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "NETHERITE_AXE 1"
+        - "CHERRY_SAPLING 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Woodcutter job!"
+        - "give %player% netherite_axe{Enchantments:[{id:efficiency,lvl:5},{id:fortune,lvl:3},{id:unbreaking,lvl:3},{id:mending,lvl:1}]} 1"
+      items:
+        - "CHERRY_LOG 256"
+        - "MANGROVE_LOG 128"
+        - "CRIMSON_STEM 128"
+      permissions:
+        - "ojobs.woodcutter.master"
+        - "ojobs.woodcutter.instachop"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+
+  1:
+    1:
+      money: 0
+      commands: []
+      items:
+        - "CHERRY_LOG 32"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    5:
+      money: 1000
+      commands: []
+      items:
+        - "NETHERITE_AXE 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    10:
+      money: 5000
+      commands:
+        - "say %player% reached Woodcutter P1 level 10!"
+      items:
+        - "CHERRY_LOG 128"
+        - "NETHERITE_AXE 1"
+      permissions:
+        - "ojobs.woodcutter.p1.treefeller"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    20:
+      money: 75000
+      commands:
+        - "say %player% has MASTERED Woodcutter Prestige 1!"
+      items:
+        - "CHERRY_LOG 512"
+        - "NETHERITE_AXE 2"
+      permissions:
+        - "ojobs.woodcutter.p1.master"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8

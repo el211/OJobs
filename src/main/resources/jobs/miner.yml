@@ -1,0 +1,758 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                    ⛏ MINER JOB                         ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "⛏ Miner"
+description:
+  - "<gray>Mine ores and stone to earn XP."
+  - "<gray>Higher levels unlock rare ores!"
+  - ""
+  - "<yellow>Actions: <white>Block Breaking"
+
+icon: DIAMOND_PICKAXE
+custom-model-data: -1
+color: "<aqua>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+# ── XP Formula ──────────────────────────────────────────────
+# EXPONENTIAL: base * multiplier^(level-1)
+# Level 1 = 100, Level 2 = 150, Level 10 = 3844, Level 20 = 221,810
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+# ── World Restrictions ──────────────────────────────────────
+worlds:
+  whitelist: []
+  blacklist:
+    - "world_the_end"
+
+# ── Cooldowns (seconds) ────────────────────────────────────
+cooldowns:
+  block-break: 0
+
+# ── Actions ─────────────────────────────────────────────────
+actions:
+
+  block-break:
+
+    # ── Common Stone & Ores ──────────────────────────────────
+    STONE:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    COBBLESTONE:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    DEEPSLATE:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    COBBLED_DEEPSLATE:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    GRANITE:
+      xp: 0.8
+      chance: 1.0
+      level-requirement: 0
+    DIORITE:
+      xp: 0.8
+      chance: 1.0
+      level-requirement: 0
+    ANDESITE:
+      xp: 0.8
+      chance: 1.0
+      level-requirement: 0
+    TUFF:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    CALCITE:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+
+    # ── Coal ─────────────────────────────────────────────────
+    COAL_ORE:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    DEEPSLATE_COAL_ORE:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 0
+
+    # ── Copper ───────────────────────────────────────────────
+    COPPER_ORE:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 0
+    DEEPSLATE_COPPER_ORE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 0
+
+    # ── Iron ─────────────────────────────────────────────────
+    IRON_ORE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    DEEPSLATE_IRON_ORE:
+      xp: 11.0
+      chance: 1.0
+      level-requirement: 2
+
+    # ── Gold ─────────────────────────────────────────────────
+    GOLD_ORE:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 4
+    DEEPSLATE_GOLD_ORE:
+      xp: 16.0
+      chance: 1.0
+      level-requirement: 4
+    NETHER_GOLD_ORE:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 4
+
+    # ── Redstone ─────────────────────────────────────────────
+    REDSTONE_ORE:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 3
+    DEEPSLATE_REDSTONE_ORE:
+      xp: 13.0
+      chance: 1.0
+      level-requirement: 3
+
+    # ── Lapis ────────────────────────────────────────────────
+    LAPIS_ORE:
+      xp: 14.0
+      chance: 1.0
+      level-requirement: 5
+    DEEPSLATE_LAPIS_ORE:
+      xp: 18.0
+      chance: 1.0
+      level-requirement: 5
+
+    # ── Diamond ──────────────────────────────────────────────
+    DIAMOND_ORE:
+      xp: 30.0
+      chance: 1.0
+      level-requirement: 8
+    DEEPSLATE_DIAMOND_ORE:
+      xp: 40.0
+      chance: 1.0
+      level-requirement: 8
+
+    # ── Emerald ──────────────────────────────────────────────
+    EMERALD_ORE:
+      xp: 35.0
+      chance: 1.0
+      level-requirement: 10
+    DEEPSLATE_EMERALD_ORE:
+      xp: 45.0
+      chance: 1.0
+      level-requirement: 10
+
+    # ── Nether ───────────────────────────────────────────────
+    NETHER_QUARTZ_ORE:
+      xp: 9.0
+      chance: 1.0
+      level-requirement: 6
+    ANCIENT_DEBRIS:
+      xp: 100.0
+      chance: 1.0
+      level-requirement: 15
+    GLOWSTONE:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 3
+    BASALT:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    BLACKSTONE:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 0
+
+    # ── Amethyst ─────────────────────────────────────────────
+    AMETHYST_CLUSTER:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 7
+    BUDDING_AMETHYST:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 7
+
+    # ── Sculk ────────────────────────────────────────────────
+    SCULK:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 12
+    SCULK_CATALYST:
+      xp: 25.0
+      chance: 1.0
+      level-requirement: 14
+    SCULK_SENSOR:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 12
+
+    # ── Misc ─────────────────────────────────────────────────
+    OBSIDIAN:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 6
+    CRYING_OBSIDIAN:
+      xp: 18.0
+      chance: 1.0
+      level-requirement: 8
+    END_STONE:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 10
+    SANDSTONE:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    RED_SANDSTONE:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    NETHERRACK:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    TERRACOTTA:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    PRISMARINE:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 5
+    DARK_PRISMARINE:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 5
+    SEA_LANTERN:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 5
+
+# ── Level Rewards ───────────────────────────────────────────
+# ── Rewards (Prestige-based) ─────────────────────────────────
+# prestige 0 = base rewards (no prestige)
+# prestige 1,2,3... = rewards AFTER prestiging
+rewards:
+  0:
+
+    1:
+      money: 50
+      commands: []
+      items:
+        - "STONE_PICKAXE 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "COAL 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 200
+      commands: []
+      items:
+        - "IRON_PICKAXE 1"
+        - "TORCH 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 350
+      commands: []
+      items:
+        - "RAW_IRON 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Miner level 5!"
+      items:
+        - "DIAMOND_PICKAXE 1"
+        - "RAW_GOLD 8"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "LAPIS_LAZULI 32"
+        - "REDSTONE 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "AMETHYST_SHARD 16"
+        - "GOLD_INGOT 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "DIAMOND 4"
+        - "IRON_INGOT 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "DIAMOND 8"
+        - "EMERALD 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Miner level 10! Halfway to mastery!"
+      items:
+        - "DIAMOND 16"
+        - "EMERALD 8"
+        - "NETHERITE_SCRAP 1"
+      permissions:
+        - "ojobs.miner.vein"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "DIAMOND 12"
+        - "QUARTZ 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "EMERALD 16"
+        - "GOLD_INGOT 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "DIAMOND 20"
+        - "LAPIS_LAZULI 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "NETHERITE_SCRAP 2"
+        - "DIAMOND 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Miner level 15! Ancient Debris unlocked!"
+      items:
+        - "NETHERITE_SCRAP 4"
+        - "DIAMOND 24"
+        - "EMERALD 16"
+      permissions:
+        - "ojobs.miner.fortune"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 1"
+        - "DIAMOND 20"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 2"
+        - "EMERALD 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 3"
+        - "DIAMOND 32"
+        - "EMERALD 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 4"
+        - "DIAMOND_BLOCK 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Miner job!"
+        - "give %player% netherite_pickaxe{Enchantments:[{id:efficiency,lvl:5},{id:fortune,lvl:3},{id:unbreaking,lvl:3},{id:mending,lvl:1}]} 1"
+      items:
+        - "NETHERITE_BLOCK 2"
+        - "DIAMOND_BLOCK 8"
+        - "EMERALD_BLOCK 4"
+      permissions:
+        - "ojobs.miner.master"
+        - "ojobs.miner.nightvision"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+  1:
+    1:
+      money: 0
+      commands: [ ]
+      items:
+        - "DIAMOND 1"
+      permissions: [ ]
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "COAL 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 200
+      commands: []
+      items:
+        - "IRON_PICKAXE 1"
+        - "TORCH 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 350
+      commands: []
+      items:
+        - "RAW_IRON 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Miner level 5!"
+      items:
+        - "DIAMOND_PICKAXE 1"
+        - "RAW_GOLD 8"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "LAPIS_LAZULI 32"
+        - "REDSTONE 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "AMETHYST_SHARD 16"
+        - "GOLD_INGOT 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "DIAMOND 4"
+        - "IRON_INGOT 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "DIAMOND 8"
+        - "EMERALD 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Miner level 10! Halfway to mastery!"
+      items:
+        - "DIAMOND 16"
+        - "EMERALD 8"
+        - "NETHERITE_SCRAP 1"
+      permissions:
+        - "ojobs.miner.vein"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "DIAMOND 12"
+        - "QUARTZ 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "EMERALD 16"
+        - "GOLD_INGOT 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "DIAMOND 20"
+        - "LAPIS_LAZULI 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "NETHERITE_SCRAP 2"
+        - "DIAMOND 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Miner level 15! Ancient Debris unlocked!"
+      items:
+        - "NETHERITE_SCRAP 4"
+        - "DIAMOND 24"
+        - "EMERALD 16"
+      permissions:
+        - "ojobs.miner.fortune"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 1"
+        - "DIAMOND 20"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 2"
+        - "EMERALD 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 3"
+        - "DIAMOND 32"
+        - "EMERALD 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 4"
+        - "DIAMOND_BLOCK 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Miner job!"
+        - "give %player% netherite_pickaxe{Enchantments:[{id:efficiency,lvl:5},{id:fortune,lvl:3},{id:unbreaking,lvl:3},{id:mending,lvl:1}]} 1"
+      items:
+        - "NETHERITE_BLOCK 2"
+        - "DIAMOND_BLOCK 8"
+        - "EMERALD_BLOCK 4"
+      permissions:
+        - "ojobs.miner.master"
+        - "ojobs.miner.nightvision"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8

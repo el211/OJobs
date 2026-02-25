@@ -1,0 +1,57 @@
+name: OJobs
+version: '${project.version}'
+main: fr.oreo.oJobs.OJobs
+api-version: '1.21'
+description: Premium jobs plugin with full GUI, prestige, boosters and PlaceholderAPI support.
+author: Oreo
+website: https://github.com/oreo/ojobs
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+
+
+commands:
+  jobs:
+    description: Main jobs command
+    usage: /jobs [subcommand]
+    aliases: [job]
+    permission: ojobs.use
+
+permissions:
+  ojobs.use:
+    description: Allows using /jobs
+    default: true
+  ojobs.admin:
+    description: Allows using /jobs admin commands
+    default: op
+  ojobs.reload:
+    description: Allows /jobs reload
+    default: op
+  ojobs.giveexp:
+    description: Allows /jobs giveexp
+    default: op
+  ojobs.setlevel:
+    description: Allows /jobs setlevel
+    default: op
+  ojobs.reset:
+    description: Allows /jobs reset
+    default: op
+  ojobs.booster:
+    description: Allows /jobs booster commands
+    default: op
+  ojobs.prestige:
+    description: Allows players to prestige
+    default: true
+  ojobs.bypass.maxjobs:
+    description: Bypass max-jobs limit
+    default: op
+  ojobs.multiplier.vip:
+    description: VIP XP multiplier
+    default: false
+  ojobs.multiplier.premium:
+    description: Premium XP multiplier
+    default: false
+  ojobs.multiplier.elite:
+    description: Elite XP multiplier
+    default: false

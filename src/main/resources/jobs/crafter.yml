@@ -1,0 +1,589 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                  ⚒ CRAFTER JOB                         ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "⚒ Crafter"
+description:
+  - "<gray>Craft items and tools to earn XP."
+  - "<gray>The more complex the recipe, the bigger the reward!"
+  - ""
+  - "<yellow>Actions: <white>Crafting"
+
+icon: CRAFTING_TABLE
+custom-model-data: -1
+color: "<light_purple>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+worlds:
+  whitelist: []
+  blacklist: []
+
+cooldowns:
+  crafting: 0
+
+actions:
+  crafting:
+    # ── Basic Tools ──────────────────────────────────────────
+    WOODEN_PICKAXE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    STONE_PICKAXE:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_PICKAXE:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 1
+    GOLDEN_PICKAXE:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 1
+    DIAMOND_PICKAXE:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 5
+    WOODEN_AXE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    STONE_AXE:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_AXE:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 1
+    DIAMOND_AXE:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 5
+    WOODEN_SWORD:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    STONE_SWORD:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_SWORD:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 1
+    DIAMOND_SWORD:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 5
+    WOODEN_HOE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_HOE:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 1
+    DIAMOND_HOE:
+      xp: 14.0
+      chance: 1.0
+      level-requirement: 5
+    WOODEN_SHOVEL:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_SHOVEL:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 1
+    DIAMOND_SHOVEL:
+      xp: 14.0
+      chance: 1.0
+      level-requirement: 5
+    # ── Armor ────────────────────────────────────────────────
+    LEATHER_HELMET:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    LEATHER_CHESTPLATE:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 0
+    LEATHER_LEGGINGS:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 0
+    LEATHER_BOOTS:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_HELMET:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    IRON_CHESTPLATE:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 2
+    IRON_LEGGINGS:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 2
+    IRON_BOOTS:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    DIAMOND_HELMET:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 7
+    DIAMOND_CHESTPLATE:
+      xp: 30.0
+      chance: 1.0
+      level-requirement: 7
+    DIAMOND_LEGGINGS:
+      xp: 25.0
+      chance: 1.0
+      level-requirement: 7
+    DIAMOND_BOOTS:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 7
+    # ── Utility Items ─────────────────────────────────────────
+    CHEST:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    CRAFTING_TABLE:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    FURNACE:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    BLAST_FURNACE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 3
+    SMOKER:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 2
+    ANVIL:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 5
+    ENCHANTING_TABLE:
+      xp: 25.0
+      chance: 1.0
+      level-requirement: 8
+    BREWING_STAND:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 4
+    BEACON:
+      xp: 100.0
+      chance: 1.0
+      level-requirement: 15
+    CONDUIT:
+      xp: 80.0
+      chance: 1.0
+      level-requirement: 14
+    # ── Blocks & Decorations ──────────────────────────────────
+    BOOKSHELF:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 2
+    CHISELED_BOOKSHELF:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 3
+    JUKEBOX:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 4
+    NOTE_BLOCK:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    DISPENSER:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 3
+    DROPPER:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 2
+    PISTON:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 3
+    STICKY_PISTON:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 4
+    # ── Food ─────────────────────────────────────────────────
+    BREAD:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    CAKE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 3
+    COOKIE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    PUMPKIN_PIE:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 1
+    GOLDEN_APPLE:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 8
+    # ── Redstone & Mechanisms ─────────────────────────────────
+    REDSTONE_TORCH:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 1
+    COMPARATOR:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 5
+    REPEATER:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 4
+    HOPPER:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 5
+    OBSERVER:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 5
+    # ── Weapons ──────────────────────────────────────────────
+    BOW:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    CROSSBOW:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 5
+    SHIELD:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 4
+
+rewards:
+  0:
+    1:
+      money: 50
+      commands: []
+      items:
+        - "CRAFTING_TABLE 1"
+        - "OAK_PLANKS 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "IRON_INGOT 16"
+        - "STONE_PICKAXE 2"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 175
+      commands: []
+      items:
+        - "FURNACE 2"
+        - "IRON_INGOT 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 300
+      commands: []
+      items:
+        - "IRON_CHESTPLATE 1"
+        - "BREWING_STAND 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Crafter level 5!"
+      items:
+        - "DIAMOND_PICKAXE 1"
+        - "DIAMOND_SWORD 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "DIAMOND_CHESTPLATE 1"
+        - "DIAMOND 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "DIAMOND_HELMET 1"
+        - "DIAMOND_BOOTS 1"
+        - "DIAMOND 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "ENCHANTING_TABLE 1"
+        - "BOOKSHELF 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "GOLDEN_APPLE 4"
+        - "ANVIL 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Crafter level 10!"
+      items:
+        - "DIAMOND_BLOCK 2"
+        - "GOLDEN_APPLE 8"
+      permissions:
+        - "ojobs.crafter.massmake"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "NETHERITE_PICKAXE 1"
+        - "DIAMOND_BLOCK 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "NETHERITE_SWORD 1"
+        - "DIAMOND_BLOCK 6"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "NETHERITE_CHESTPLATE 1"
+        - "DIAMOND_BLOCK 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "CONDUIT 1"
+        - "NETHERITE_INGOT 2"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Crafter level 15!"
+      items:
+        - "NETHERITE_INGOT 4"
+        - "CONDUIT 2"
+      permissions:
+        - "ojobs.crafter.recipeunlock"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 6"
+        - "DIAMOND_BLOCK 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 8"
+        - "BEACON 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "NETHERITE_BLOCK 2"
+        - "BEACON 2"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "NETHERITE_BLOCK 4"
+        - "BEACON 3"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Crafter job!"
+      items:
+        - "NETHERITE_BLOCK 8"
+        - "BEACON 4"
+        - "CONDUIT 4"
+      permissions:
+        - "ojobs.crafter.master"
+        - "ojobs.crafter.autocraft"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+
+  1:
+    1:
+      money: 0
+      commands: []
+      items:
+        - "BEACON 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    5:
+      money: 1000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 4"
+        - "BEACON 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    10:
+      money: 5000
+      commands:
+        - "say %player% reached Crafter P1 level 10!"
+      items:
+        - "NETHERITE_BLOCK 4"
+        - "BEACON 2"
+      permissions:
+        - "ojobs.crafter.p1.massmake"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    20:
+      money: 75000
+      commands:
+        - "say %player% has MASTERED Crafter Prestige 1!"
+      items:
+        - "NETHERITE_BLOCK 16"
+        - "BEACON 8"
+      permissions:
+        - "ojobs.crafter.p1.master"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8

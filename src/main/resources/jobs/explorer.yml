@@ -1,0 +1,495 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                  🧭 EXPLORER JOB                        ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "🧭 Explorer"
+description:
+  - "<gray>Discover new biomes by breaking unique blocks."
+  - "<gray>Every biome has its own rewards!"
+  - ""
+  - "<yellow>Actions: <white>Block Breaking (Biome blocks)"
+
+icon: COMPASS
+custom-model-data: -1
+color: "<green>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+worlds:
+  whitelist: []
+  blacklist: []
+
+cooldowns:
+  block-break: 500
+
+actions:
+  block-break:
+    # ── Desert ───────────────────────────────────────────────
+    SAND:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    SANDSTONE:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    DEAD_BUSH:
+      xp: 1.0
+      chance: 0.5
+      level-requirement: 0
+    CACTUS:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    # ── Jungle ────────────────────────────────────────────────
+    JUNGLE_LOG:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 2
+    JUNGLE_LEAVES:
+      xp: 1.0
+      chance: 0.5
+      level-requirement: 0
+    VINE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 2
+    COCOA:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 3
+    # ── Swamp ────────────────────────────────────────────────
+    MUD:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    MUDDY_MANGROVE_ROOTS:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 1
+    MANGROVE_LOG:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 3
+    LILY_PAD:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    # ── Snowy / Frozen ────────────────────────────────────────
+    ICE:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 1
+    PACKED_ICE:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 4
+    BLUE_ICE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 6
+    POWDER_SNOW:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 1
+    SNOW_BLOCK:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    # ── Ocean ─────────────────────────────────────────────────
+    SEAGRASS:
+      xp: 1.5
+      chance: 0.5
+      level-requirement: 0
+    KELP:
+      xp: 1.5
+      chance: 0.5
+      level-requirement: 0
+    SEA_PICKLE:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 2
+    CORAL_BLOCK:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 5
+    BRAIN_CORAL_BLOCK:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 5
+    TUBE_CORAL_BLOCK:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 5
+    # ── Nether ───────────────────────────────────────────────
+    SOUL_SAND:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 6
+    SOUL_SOIL:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 6
+    NETHER_WART_BLOCK:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 7
+    WARPED_NYLIUM:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 7
+    CRIMSON_NYLIUM:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 7
+    NETHERRACK:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 6
+    # ── End ──────────────────────────────────────────────────
+    END_STONE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 12
+    END_STONE_BRICKS:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 12
+    PURPUR_BLOCK:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 14
+    CHORUS_PLANT:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 13
+    # ── Lush Caves ───────────────────────────────────────────
+    MOSS_BLOCK:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 5
+    DRIPSTONE_BLOCK:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 5
+    POINTED_DRIPSTONE:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 5
+    AZALEA:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 4
+    SPORE_BLOSSOM:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 6
+    ROOTED_DIRT:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 4
+
+rewards:
+  0:
+    1:
+      money: 50
+      commands: []
+      items:
+        - "COMPASS 1"
+        - "MAP 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "CACTUS 16"
+        - "SAND 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 175
+      commands: []
+      items:
+        - "VINE 16"
+        - "MUD 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 300
+      commands: []
+      items:
+        - "PACKED_ICE 8"
+        - "MOSS_BLOCK 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Explorer level 5!"
+      items:
+        - "BLUE_ICE 4"
+        - "CORAL_BLOCK 4"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "SOUL_SAND 16"
+        - "NETHERRACK 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "WARPED_NYLIUM 8"
+        - "CRIMSON_NYLIUM 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "BLUE_ICE 16"
+        - "NETHER_WART_BLOCK 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "SPORE_BLOSSOM 4"
+        - "POINTED_DRIPSTONE 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Explorer level 10!"
+      items:
+        - "DIAMOND 8"
+        - "EXPLORER_MAP 1"
+      permissions:
+        - "ojobs.explorer.nightvision"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "END_STONE 16"
+        - "CHORUS_FLOWER 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "END_STONE_BRICKS 16"
+        - "PURPUR_BLOCK 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "PURPUR_BLOCK 16"
+        - "ENDER_PEARL 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "ENDER_EYE 8"
+        - "PURPUR_PILLAR 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Explorer level 15!"
+      items:
+        - "ELYTRA 1"
+      permissions:
+        - "ojobs.explorer.swiftsneak"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 2"
+        - "ENDER_PEARL 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "NETHERITE_INGOT 3"
+        - "SHULKER_SHELL 2"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "ELYTRA 1"
+        - "SHULKER_SHELL 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "SHULKER_SHELL 8"
+        - "ENDER_CHEST 4"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Explorer job!"
+      items:
+        - "ELYTRA 2"
+        - "SHULKER_SHELL 16"
+        - "ENDER_CHEST 8"
+      permissions:
+        - "ojobs.explorer.master"
+        - "ojobs.explorer.dimensionwarp"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+
+  1:
+    1:
+      money: 0
+      commands: []
+      items:
+        - "ELYTRA 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    5:
+      money: 1000
+      commands: []
+      items:
+        - "SHULKER_SHELL 4"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    10:
+      money: 5000
+      commands:
+        - "say %player% reached Explorer P1 level 10!"
+      items:
+        - "ELYTRA 1"
+        - "SHULKER_SHELL 8"
+      permissions:
+        - "ojobs.explorer.p1.nightvision"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    20:
+      money: 75000
+      commands:
+        - "say %player% has MASTERED Explorer Prestige 1!"
+      items:
+        - "ELYTRA 2"
+        - "SHULKER_SHELL 32"
+      permissions:
+        - "ojobs.explorer.p1.master"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8

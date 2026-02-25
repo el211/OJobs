@@ -1,0 +1,231 @@
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║                   oJobs — GUI Configuration                  ║
+# ║  Controls the appearance and layout of all in-game menus.    ║
+# ║  Supports MiniMessage formatting for all text fields.        ║
+# ╚═══════════════════════════════════════════════════════════════╝
+rewards-menu:
+  title: "<aqua>📖 %job_name% Rewards"
+  size: 54
+  reward-slots: [9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+  prestige-tab-slots: [0,1,2,3,4,5,6,7,8]
+  prev-slot: 45
+  next-slot: 53
+  back-slot: 49
+  reward-material-unlocked: "LIME_DYE"
+  reward-material-locked: "GRAY_DYE"
+  reward-name-unlocked: "<green>Level %level% Reward"
+  reward-name-locked: "<red>Level %level% Reward"
+  reward-lore-unlocked:
+    - "<gray>Level: <green>%level%"
+    - ""
+    - "%money_line%"
+    - "%items_line%"
+    - "%commands_line%"
+    - ""
+    - "<dark_green>✔ Unlocked"
+  reward-lore-locked:
+    - "<gray>Level: <red>%level%"
+    - ""
+    - "%money_line%"
+    - "%items_line%"
+    - "%commands_line%"
+    - ""
+    - "<red>✘ Locked"
+# ── Progress Bar (used in all GUIs and PlaceholderAPI) ─────────────
+progress-bar:
+  enabled: true
+  length: 20
+  filled-char: "█"
+  empty-char: "░"
+  filled-color: "<green>"
+  empty-color: "<dark_gray>"
+
+# ══════════════════════════════════════════════════════════════════
+# MAIN MENU — /jobs
+# ══════════════════════════════════════════════════════════════════
+main-menu:
+  title: "<gold>✦ Jobs"
+  size: 54        # Must be multiple of 9 (9, 18, 27, 36, 45, 54)
+
+  # Filler (decorative glass panes)
+  filler:
+    enabled: true
+    material: "GRAY_STAINED_GLASS_PANE"
+    # Slots to fill (typically borders)
+    slots: [0,1,2,3,4,5,6,7,8, 36,37,38,39,40,41,42,43,44, 9,18,27, 17,26,35]
+
+  # Slots where job icons will be placed (left-to-right, top-to-bottom)
+  # Rows 2–4, columns 2–8  →  gives 21 slots per page
+  job-slots: [10,11,12,13,14,15,16, 19,20,21,22,23,24,25, 28,29,30,31,32,33,34]
+
+  # Lore shown for jobs the player HAS joined
+  joined-lore:
+    - ""
+    - "<gray>Level: <yellow>%level%"
+    - "<gray>XP: <yellow>%xp% <dark_gray>/ <yellow>%xp_required%"
+    - "%progress_bar%"
+    - ""
+    - "%description%"
+    - ""
+    - "<green>✔ Joined"
+    - "<gray>Right-click to leave"
+
+  # Lore shown for jobs the player has NOT joined
+  not-joined-lore:
+    - ""
+    - "%description%"
+    - ""
+    - "<red>✘ Not Joined"
+    - "<gray>Click to view details"
+
+  # Navigation
+  prev-page-slot: 45
+  prev-page-material: "ARROW"
+  prev-page-name: "<yellow>◀ Previous"
+
+  next-page-slot: 53
+  next-page-material: "ARROW"
+  next-page-name: "<yellow>Next ▶"
+
+  # Close button
+  close-button:
+    slot: 49
+    material: "BARRIER"
+    name: "<red>Close"
+    lore:
+      - "<gray>Click to close menu"
+
+  # Sound played on click
+  click-sound: "UI_BUTTON_CLICK"
+
+# ══════════════════════════════════════════════════════════════════
+# JOB DETAIL MENU — click on a job
+# ══════════════════════════════════════════════════════════════════
+job-menu:
+  title: "<gold>%job_name%"
+  size: 54
+  all-rewards-slot: 32
+  all-rewards-material: "KNOWLEDGE_BOOK"
+  all-rewards-name: "<aqua>📖 All Level Rewards"
+  all-rewards-lore:
+    - "<gray>Browse every level reward"
+    - "<gray>for <white>%job_name%<gray>."
+    - ""
+    - "<yellow>Click to open!"
+  # Filler
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+
+  # Stats display
+  stats-slot: 13
+  stats-material: "BOOK"
+  stats-name: "<yellow>%job_name% Stats"
+  stats-lore:
+    - ""
+    - "<gray>Level: <yellow>%level%"
+    - "<gray>Prestige: <gold>%prestige%"
+    - ""
+    - "<gray>XP: <yellow>%xp% <dark_gray>/ <yellow>%xp_required%"
+    - "%progress_bar%"
+    - ""
+    - "<gray>Total XP earned: <yellow>%total_xp%"
+
+  # Rewards preview
+  rewards-slot: 31
+  rewards-material: "CHEST"
+  rewards-name: "<yellow>Upcoming Rewards"
+  rewards-lore:
+    - ""
+    - "<gray>Next reward at level: <yellow>%next_reward_level%"
+    - ""
+    - "<gray>Rewards:"
+    - "%reward_list%"
+
+  # Leave / Join button (same slot, toggles)
+  leave-slot: 49
+  leave-material: "BARRIER"
+  leave-name: "<red>Leave %job_name%"
+  leave-lore:
+    - "<gray>Click to leave this job."
+    - "<red>Your progress will be saved."
+
+  # Back button
+  back-slot: 45
+  back-material: "ARROW"
+  back-name: "<yellow>◀ Back"
+
+  # Prestige button
+  prestige-slot: 53
+  prestige-material: "NETHER_STAR"
+  prestige-name: "<gold>⭐ Prestige"
+  prestige-lore:
+    - ""
+    - "<gray>Current prestige: <gold>%prestige%"
+    - "<gray>Requires max level: <yellow>%max_level%"
+    - ""
+    - "<yellow>Click to prestige!"
+
+# ══════════════════════════════════════════════════════════════════
+# LEADERBOARD MENU — /jobs top
+# ══════════════════════════════════════════════════════════════════
+leaderboard-menu:
+  title: "<gold>🏆 Leaderboard"
+  size: 54
+
+  # Filler
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+
+  # Tab slots (top row, for switching between jobs)
+  tab-slots: [1, 2, 3, 4, 5, 6, 7]
+
+  # Lore template for each leaderboard entry
+  entry-lore:
+    - "<gray>Rank: <yellow>#%rank%"
+    - "<gray>Level: <yellow>%level%"
+    - "<gray>Prestige: <gold>%prestige%"
+    - "<gray>Total XP: <yellow>%xp%"
+  entry-material: "PLAYER_HEAD"
+
+  # Close / Back
+  close-slot: 49
+  close-name: "<red>Close"
+  back-slot: 45
+  back-name: "<yellow>◀ Back"
+
+# ══════════════════════════════════════════════════════════════════
+# ADMIN MENU — /jobs admin
+# ══════════════════════════════════════════════════════════════════
+admin-menu:
+  title: "<red>⚙ oJobs Admin"
+  size: 54
+
+  # Filler
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+
+  # Button slots and materials
+  give-xp-slot: 10
+  give-xp-material: "EXPERIENCE_BOTTLE"
+  give-xp-name: "<yellow>Give XP"
+
+  set-level-slot: 12
+  set-level-material: "GOLDEN_SWORD"
+  set-level-name: "<yellow>Set Level"
+
+  reset-slot: 14
+  reset-material: "TNT"
+  reset-name: "<red>Reset Player"
+
+  add-booster-slot: 16
+  add-booster-material: "BEACON"
+  add-booster-name: "<gold>Add Booster"
+
+  reload-slot: 49
+  reload-material: "REDSTONE"
+  reload-name: "<yellow>⟳ Reload Plugin"
+
+  back-slot: 45

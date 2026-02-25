@@ -1,0 +1,516 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                  🔥 BLACKSMITH JOB                      ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "🔥 Blacksmith"
+description:
+  - "<gray>Smelt ores and craft gear."
+  - "<gray>Higher levels unlock netherite forging!"
+  - ""
+  - "<yellow>Actions: <white>Smelting, Crafting"
+
+icon: ANVIL
+custom-model-data: -1
+color: "<dark_red>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+# ── XP Formula ──────────────────────────────────────────────
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+# ── World Restrictions ──────────────────────────────────────
+worlds:
+  whitelist: []
+  blacklist: []
+
+# ── Cooldowns (seconds) ────────────────────────────────────
+cooldowns:
+  smelting: 0
+  crafting: 0
+
+# ── Actions ─────────────────────────────────────────────────
+actions:
+
+  smelting:
+
+    # ── Ores → Ingots ────────────────────────────────────────
+    IRON_INGOT:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 0
+    GOLD_INGOT:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 3
+    COPPER_INGOT:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 0
+    NETHERITE_SCRAP:
+      xp: 50.0
+      chance: 1.0
+      level-requirement: 14
+
+    # ── Glass & Stone ────────────────────────────────────────
+    GLASS:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    SMOOTH_STONE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    STONE:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    SMOOTH_SANDSTONE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    SMOOTH_RED_SANDSTONE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    SMOOTH_QUARTZ:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 3
+    SMOOTH_BASALT:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 2
+    CRACKED_STONE_BRICKS:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 1
+
+    # ── Brick / Misc ─────────────────────────────────────────
+    BRICK:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    NETHER_BRICK:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 3
+    CHARCOAL:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    GREEN_DYE:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 0
+    DRIED_KELP:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    SPONGE:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 4
+    POPPED_CHORUS_FRUIT:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 6
+
+  crafting:
+
+    # ── Tools ────────────────────────────────────────────────
+    IRON_PICKAXE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_SWORD:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_AXE:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_SHOVEL:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 0
+    DIAMOND_PICKAXE:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 5
+    DIAMOND_SWORD:
+      xp: 16.0
+      chance: 1.0
+      level-requirement: 5
+    DIAMOND_AXE:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 5
+    DIAMOND_SHOVEL:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 5
+    DIAMOND_HOE:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 5
+
+    # ── Armor ────────────────────────────────────────────────
+    IRON_HELMET:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_CHESTPLATE:
+      xp: 16.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_LEGGINGS:
+      xp: 14.0
+      chance: 1.0
+      level-requirement: 0
+    IRON_BOOTS:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 0
+    DIAMOND_HELMET:
+      xp: 25.0
+      chance: 1.0
+      level-requirement: 6
+    DIAMOND_CHESTPLATE:
+      xp: 40.0
+      chance: 1.0
+      level-requirement: 6
+    DIAMOND_LEGGINGS:
+      xp: 35.0
+      chance: 1.0
+      level-requirement: 6
+    DIAMOND_BOOTS:
+      xp: 20.0
+      chance: 1.0
+      level-requirement: 6
+    CHAINMAIL_HELMET:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    CHAINMAIL_CHESTPLATE:
+      xp: 14.0
+      chance: 1.0
+      level-requirement: 2
+
+    # ── Misc ─────────────────────────────────────────────────
+    SHIELD:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 0
+    CROSSBOW:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 3
+    ANVIL:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 4
+    BLAST_FURNACE:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 3
+    SMITHING_TABLE:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 3
+    CHAIN:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 2
+    IRON_BARS:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    BUCKET:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 0
+    MINECART:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 2
+    RAIL:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 0
+    POWERED_RAIL:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 3
+    HOPPER:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 4
+
+# ── Level Rewards ───────────────────────────────────────────
+level-rewards:
+
+  1:
+    money: 50
+    commands: []
+    items:
+      - "IRON_INGOT 16"
+      - "COAL 16"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  2:
+    money: 100
+    commands: []
+    items:
+      - "IRON_INGOT 32"
+      - "ANVIL 1"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  3:
+    money: 200
+    commands: []
+    items:
+      - "GOLD_INGOT 16"
+      - "BLAST_FURNACE 1"
+      - "SMITHING_TABLE 1"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  4:
+    money: 350
+    commands: []
+    items:
+      - "IRON_INGOT 64"
+      - "GOLD_INGOT 16"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  5:
+    money: 500
+    commands:
+      - "say %player% reached Blacksmith level 5!"
+    items:
+      - "DIAMOND 8"
+      - "GOLD_INGOT 32"
+      - "LAVA_BUCKET 2"
+    permissions: []
+    firework: true
+    sound: "UI_TOAST_CHALLENGE_COMPLETE"
+    sound-volume: 1.0
+    sound-pitch: 1.0
+
+  6:
+    money: 750
+    commands: []
+    items:
+      - "DIAMOND 8"
+      - "IRON_BLOCK 8"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  7:
+    money: 1000
+    commands: []
+    items:
+      - "DIAMOND 12"
+      - "GOLD_BLOCK 4"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  8:
+    money: 1500
+    commands: []
+    items:
+      - "DIAMOND 16"
+      - "EMERALD 8"
+      - "COPPER_BLOCK 16"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  9:
+    money: 2000
+    commands: []
+    items:
+      - "DIAMOND 20"
+      - "EMERALD 12"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  10:
+    money: 3000
+    commands:
+      - "say %player% reached Blacksmith level 10! Journeyman forger!"
+    items:
+      - "DIAMOND 24"
+      - "EMERALD 16"
+      - "NETHERITE_SCRAP 1"
+    permissions:
+      - "ojobs.blacksmith.repair"
+    firework: true
+    sound: "UI_TOAST_CHALLENGE_COMPLETE"
+    sound-volume: 1.0
+    sound-pitch: 1.0
+
+  11:
+    money: 4000
+    commands: []
+    items:
+      - "DIAMOND 20"
+      - "NETHERITE_SCRAP 1"
+      - "GOLD_BLOCK 8"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  12:
+    money: 5000
+    commands: []
+    items:
+      - "NETHERITE_SCRAP 2"
+      - "DIAMOND 16"
+      - "EMERALD 16"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  13:
+    money: 6500
+    commands: []
+    items:
+      - "NETHERITE_SCRAP 3"
+      - "DIAMOND 20"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  14:
+    money: 8000
+    commands: []
+    items:
+      - "NETHERITE_INGOT 1"
+      - "DIAMOND 24"
+      - "EMERALD 16"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  15:
+    money: 10000
+    commands:
+      - "say %player% reached Blacksmith level 15! Netherite forging unlocked!"
+    items:
+      - "NETHERITE_INGOT 2"
+      - "DIAMOND_BLOCK 4"
+      - "EMERALD_BLOCK 2"
+    permissions:
+      - "ojobs.blacksmith.netherite"
+    firework: true
+    sound: "UI_TOAST_CHALLENGE_COMPLETE"
+    sound-volume: 1.0
+    sound-pitch: 1.0
+
+  16:
+    money: 13000
+    commands: []
+    items:
+      - "NETHERITE_INGOT 2"
+      - "DIAMOND_BLOCK 4"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  17:
+    money: 16000
+    commands: []
+    items:
+      - "NETHERITE_INGOT 3"
+      - "EMERALD_BLOCK 4"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  18:
+    money: 20000
+    commands: []
+    items:
+      - "NETHERITE_INGOT 4"
+      - "DIAMOND_BLOCK 4"
+      - "EMERALD_BLOCK 4"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  19:
+    money: 25000
+    commands: []
+    items:
+      - "NETHERITE_INGOT 5"
+      - "DIAMOND_BLOCK 6"
+    permissions: []
+    firework: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    sound-volume: 1.0
+    sound-pitch: 1.2
+
+  20:
+    money: 50000
+    commands:
+      - "say %player% has MASTERED the Blacksmith job!"
+      - "give %player% netherite_chestplate{Enchantments:[{id:protection,lvl:4},{id:unbreaking,lvl:3},{id:mending,lvl:1}]} 1"
+    items:
+      - "NETHERITE_BLOCK 2"
+      - "DIAMOND_BLOCK 8"
+      - "EMERALD_BLOCK 4"
+      - "ANVIL 4"
+    permissions:
+      - "ojobs.blacksmith.master"
+      - "ojobs.blacksmith.autosmelt"
+    firework: true
+    sound: "UI_TOAST_CHALLENGE_COMPLETE"
+    sound-volume: 1.0
+    sound-pitch: 0.8

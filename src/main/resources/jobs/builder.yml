@@ -1,0 +1,525 @@
+# ╔══════════════════════════════════════════════════════════╗
+# ║                  🏗 BUILDER JOB                         ║
+# ╚══════════════════════════════════════════════════════════╝
+
+display-name: "🏗 Builder"
+description:
+  - "<gray>Place blocks and construct great things."
+  - "<gray>Every block placed earns you experience!"
+  - ""
+  - "<yellow>Actions: <white>Block Placing"
+
+icon: BRICKS
+custom-model-data: -1
+color: "<yellow>"
+
+max-level: 20
+max-players: -1
+required-permission: ""
+
+xp-formula:
+  type: EXPONENTIAL
+  base: 100.0
+  multiplier: 1.5
+
+worlds:
+  whitelist: []
+  blacklist: []
+
+cooldowns:
+  block-place: 0
+
+actions:
+  block-place:
+    # ── Basic Building Blocks ────────────────────────────────
+    STONE:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    COBBLESTONE:
+      xp: 0.5
+      chance: 1.0
+      level-requirement: 0
+    STONE_BRICKS:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    BRICKS:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 0
+    OAK_PLANKS:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    SPRUCE_PLANKS:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    BIRCH_PLANKS:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    JUNGLE_PLANKS:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    ACACIA_PLANKS:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    DARK_OAK_PLANKS:
+      xp: 1.0
+      chance: 1.0
+      level-requirement: 0
+    MANGROVE_PLANKS:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    CHERRY_PLANKS:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    SAND:
+      xp: 0.8
+      chance: 1.0
+      level-requirement: 0
+    SANDSTONE:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    SMOOTH_SANDSTONE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 2
+    RED_SANDSTONE:
+      xp: 1.5
+      chance: 1.0
+      level-requirement: 0
+    GLASS:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 1
+    GLASS_PANE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 1
+    TERRACOTTA:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 2
+    WHITE_TERRACOTTA:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 2
+    GLAZED_TERRACOTTA:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 3
+    # ── Mid-tier ─────────────────────────────────────────────
+    DEEPSLATE_BRICKS:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 3
+    POLISHED_DEEPSLATE:
+      xp: 3.5
+      chance: 1.0
+      level-requirement: 3
+    COBBLED_DEEPSLATE:
+      xp: 2.5
+      chance: 1.0
+      level-requirement: 2
+    TUFF_BRICKS:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 4
+    CHISELED_TUFF:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 5
+    CHISELED_STONE_BRICKS:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 4
+    PRISMARINE:
+      xp: 6.0
+      chance: 1.0
+      level-requirement: 5
+    DARK_PRISMARINE:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 5
+    PRISMARINE_BRICKS:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 5
+    SEA_LANTERN:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 6
+    # ── High-tier ────────────────────────────────────────────
+    QUARTZ_BLOCK:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 6
+    SMOOTH_QUARTZ:
+      xp: 9.0
+      chance: 1.0
+      level-requirement: 7
+    QUARTZ_BRICKS:
+      xp: 10.0
+      chance: 1.0
+      level-requirement: 7
+    IRON_BLOCK:
+      xp: 12.0
+      chance: 1.0
+      level-requirement: 8
+    GOLD_BLOCK:
+      xp: 15.0
+      chance: 1.0
+      level-requirement: 10
+    DIAMOND_BLOCK:
+      xp: 30.0
+      chance: 1.0
+      level-requirement: 14
+    EMERALD_BLOCK:
+      xp: 35.0
+      chance: 1.0
+      level-requirement: 15
+    NETHERITE_BLOCK:
+      xp: 60.0
+      chance: 1.0
+      level-requirement: 18
+    # ── Decorative ───────────────────────────────────────────
+    LANTERN:
+      xp: 3.0
+      chance: 1.0
+      level-requirement: 2
+    SOUL_LANTERN:
+      xp: 4.0
+      chance: 1.0
+      level-requirement: 3
+    CANDLE:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 1
+    FLOWER_POT:
+      xp: 2.0
+      chance: 1.0
+      level-requirement: 1
+    BOOKSHELF:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 4
+    CHISELED_BOOKSHELF:
+      xp: 7.0
+      chance: 1.0
+      level-requirement: 5
+    AMETHYST_BLOCK:
+      xp: 8.0
+      chance: 1.0
+      level-requirement: 6
+    SCULK:
+      xp: 5.0
+      chance: 1.0
+      level-requirement: 10
+
+rewards:
+  0:
+    1:
+      money: 50
+      commands: []
+      items:
+        - "STONE 64"
+        - "OAK_PLANKS 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    2:
+      money: 100
+      commands: []
+      items:
+        - "BRICKS 32"
+        - "GLASS 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    3:
+      money: 175
+      commands: []
+      items:
+        - "STONE_BRICKS 32"
+        - "GLASS_PANE 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    4:
+      money: 300
+      commands: []
+      items:
+        - "TERRACOTTA 32"
+        - "SANDSTONE 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    5:
+      money: 500
+      commands:
+        - "say %player% reached Builder level 5!"
+      items:
+        - "PRISMARINE 16"
+        - "GLAZED_TERRACOTTA 16"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    6:
+      money: 750
+      commands: []
+      items:
+        - "QUARTZ_BLOCK 32"
+        - "SEA_LANTERN 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    7:
+      money: 1000
+      commands: []
+      items:
+        - "SMOOTH_QUARTZ 32"
+        - "QUARTZ_BRICKS 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    8:
+      money: 1500
+      commands: []
+      items:
+        - "IRON_BLOCK 4"
+        - "DEEPSLATE_BRICKS 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    9:
+      money: 2000
+      commands: []
+      items:
+        - "AMETHYST_BLOCK 8"
+        - "TUFF_BRICKS 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    10:
+      money: 3000
+      commands:
+        - "say %player% reached Builder level 10!"
+      items:
+        - "GOLD_BLOCK 4"
+        - "IRON_BLOCK 8"
+      permissions:
+        - "ojobs.builder.scaffold"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    11:
+      money: 4000
+      commands: []
+      items:
+        - "DIAMOND_BLOCK 1"
+        - "QUARTZ_BRICKS 64"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    12:
+      money: 5000
+      commands: []
+      items:
+        - "DIAMOND_BLOCK 2"
+        - "GOLD_BLOCK 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    13:
+      money: 6500
+      commands: []
+      items:
+        - "DIAMOND_BLOCK 4"
+        - "EMERALD_BLOCK 1"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    14:
+      money: 8000
+      commands: []
+      items:
+        - "EMERALD_BLOCK 4"
+        - "DIAMOND_BLOCK 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    15:
+      money: 10000
+      commands:
+        - "say %player% reached Builder level 15!"
+      items:
+        - "NETHERITE_BLOCK 1"
+        - "DIAMOND_BLOCK 8"
+      permissions:
+        - "ojobs.builder.instantplace"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+
+    16:
+      money: 13000
+      commands: []
+      items:
+        - "NETHERITE_BLOCK 2"
+        - "EMERALD_BLOCK 8"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    17:
+      money: 16000
+      commands: []
+      items:
+        - "NETHERITE_BLOCK 3"
+        - "DIAMOND_BLOCK 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    18:
+      money: 20000
+      commands: []
+      items:
+        - "NETHERITE_BLOCK 4"
+        - "EMERALD_BLOCK 16"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    19:
+      money: 25000
+      commands: []
+      items:
+        - "NETHERITE_BLOCK 6"
+        - "DIAMOND_BLOCK 32"
+      permissions: []
+      firework: false
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+      sound-volume: 1.0
+      sound-pitch: 1.2
+
+    20:
+      money: 50000
+      commands:
+        - "say %player% has MASTERED the Builder job!"
+      items:
+        - "NETHERITE_BLOCK 8"
+        - "DIAMOND_BLOCK 64"
+        - "EMERALD_BLOCK 32"
+      permissions:
+        - "ojobs.builder.master"
+        - "ojobs.builder.blueprint"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
+
+  1:
+    1:
+      money: 0
+      commands: []
+      items:
+        - "NETHERITE_BLOCK 1"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    5:
+      money: 1000
+      commands: []
+      items:
+        - "NETHERITE_BLOCK 4"
+        - "DIAMOND_BLOCK 8"
+      permissions: []
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    10:
+      money: 5000
+      commands:
+        - "say %player% reached Builder P1 level 10!"
+      items:
+        - "NETHERITE_BLOCK 8"
+        - "EMERALD_BLOCK 8"
+      permissions:
+        - "ojobs.builder.p1.scaffold"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 1.0
+    20:
+      money: 75000
+      commands:
+        - "say %player% has MASTERED Builder Prestige 1!"
+      items:
+        - "NETHERITE_BLOCK 16"
+        - "EMERALD_BLOCK 32"
+      permissions:
+        - "ojobs.builder.p1.master"
+      firework: true
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+      sound-volume: 1.0
+      sound-pitch: 0.8
