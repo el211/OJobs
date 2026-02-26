@@ -97,6 +97,7 @@ public class AdminGui implements InventoryProvider {
                     .build();
             contents.set(row(slot), col(slot),
                     ClickableItem.from(item, e -> {
+                        if (e.getEvent() instanceof org.bukkit.event.Cancellable c) c.setCancelled(true);
                         plugin.getLeaderboardManager().forceRefresh();
                         MessageUtil.send(player, "leaderboard-refreshed");
                     }));
@@ -106,7 +107,10 @@ public class AdminGui implements InventoryProvider {
         contents.set(row(backSlot), col(backSlot),
                 ClickableItem.from(
                         ItemBuilder.of(Material.ARROW).name("<yellow>\u25C0 Back").hideAttributes().build(),
-                        e -> plugin.getGuiManager().openMainMenu(player)));
+                        e -> {
+                            if (e.getEvent() instanceof org.bukkit.event.Cancellable c) c.setCancelled(true);
+                            plugin.getGuiManager().openMainMenu(player);
+                        }));
     }
 
     @Override
@@ -127,6 +131,9 @@ public class AdminGui implements InventoryProvider {
                 .loreLine(lore)
                 .hideAttributes()
                 .build();
-        contents.set(row(slot), col(slot), ClickableItem.from(item, onClick));
+        contents.set(row(slot), col(slot), ClickableItem.from(item, e -> {
+            if (e.getEvent() instanceof org.bukkit.event.Cancellable c) c.setCancelled(true);
+            onClick.accept(e);
+        }));
     }
 }

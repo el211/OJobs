@@ -66,6 +66,7 @@ public class JobsMainGui implements InventoryProvider {
 
                 contents.set(row(slot), col(slot), ClickableItem.from(icon, e -> {
                     if (e.getEvent() instanceof org.bukkit.event.inventory.InventoryClickEvent click) {
+                        click.setCancelled(true);
                         if (click.isRightClick() && joined) {
                             plugin.getPlayerDataManager().leaveJob(player, job);
                             plugin.getGuiManager().openMainMenu(player);
@@ -83,22 +84,28 @@ public class JobsMainGui implements InventoryProvider {
             String matName = gui.getString("main-menu.prev-page-material", "ARROW");
             String name    = gui.getString("main-menu.prev-page-name", "<yellow>\u25C0 Previous");
             contents.set(row(prevSlot), col(prevSlot),
-                    ClickableItem.from(helper.buildNavButton(matName, name), e ->
-                            plugin.getGuiManager().openMainMenu(player, page - 1)));
+                    ClickableItem.from(helper.buildNavButton(matName, name), e -> {
+                        if (e.getEvent() instanceof org.bukkit.event.inventory.InventoryClickEvent c) c.setCancelled(true);
+                        plugin.getGuiManager().openMainMenu(player, page - 1);
+                    }));
         }
 
         if (page < totalPages - 1) {
             String matName = gui.getString("main-menu.next-page-material", "ARROW");
             String name    = gui.getString("main-menu.next-page-name", "<yellow>Next \u25B6");
             contents.set(row(nextSlot), col(nextSlot),
-                    ClickableItem.from(helper.buildNavButton(matName, name), e ->
-                            plugin.getGuiManager().openMainMenu(player, page + 1)));
+                    ClickableItem.from(helper.buildNavButton(matName, name), e -> {
+                        if (e.getEvent() instanceof org.bukkit.event.inventory.InventoryClickEvent c) c.setCancelled(true);
+                        plugin.getGuiManager().openMainMenu(player, page + 1);
+                    }));
         }
 
         int closeSlot = gui.getInt("main-menu.close-button.slot", 49);
         contents.set(row(closeSlot), col(closeSlot),
-                ClickableItem.from(helper.buildCloseButton("main-menu"), e ->
-                        player.closeInventory()));
+                ClickableItem.from(helper.buildCloseButton("main-menu"), e -> {
+                    if (e.getEvent() instanceof org.bukkit.event.inventory.InventoryClickEvent c) c.setCancelled(true);
+                    player.closeInventory();
+                }));
     }
 
     @Override

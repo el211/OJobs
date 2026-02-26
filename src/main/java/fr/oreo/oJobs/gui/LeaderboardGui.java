@@ -55,6 +55,7 @@ public class LeaderboardGui implements InventoryProvider {
             int gSlot = tabSlots.get(0);
             contents.set(row(gSlot), col(gSlot),
                     ClickableItem.from(gb.build(), e -> {
+                        if (e.getEvent() instanceof org.bukkit.event.Cancellable c) c.setCancelled(true);
                         if (!currentJobId.equals("global"))
                             plugin.getGuiManager().openLeaderboard(player, "global");
                     }));
@@ -72,6 +73,7 @@ public class LeaderboardGui implements InventoryProvider {
                 final String jobId = job.getId();
                 contents.set(row(tSlot), col(tSlot),
                         ClickableItem.from(b.build(), e -> {
+                            if (e.getEvent() instanceof org.bukkit.event.Cancellable c) c.setCancelled(true);
                             if (!jobId.equals(currentJobId))
                                 plugin.getGuiManager().openLeaderboard(player, jobId);
                         }));
@@ -101,7 +103,10 @@ public class LeaderboardGui implements InventoryProvider {
                         ItemBuilder.of(Material.BARRIER)
                                 .name(gui.getString("leaderboard-menu.close-name", "<red>Close"))
                                 .build(),
-                        e -> player.closeInventory()));
+                        e -> {
+                            if (e.getEvent() instanceof org.bukkit.event.Cancellable c) c.setCancelled(true);
+                            player.closeInventory();
+                        }));
 
         int backSlot = gui.getInt("leaderboard-menu.back-slot", 45);
         contents.set(row(backSlot), col(backSlot),
@@ -109,7 +114,10 @@ public class LeaderboardGui implements InventoryProvider {
                         ItemBuilder.of(Material.ARROW)
                                 .name(gui.getString("leaderboard-menu.back-name", "<yellow>\u25C0 Back"))
                                 .build(),
-                        e -> plugin.getGuiManager().openMainMenu(player)));
+                        e -> {
+                            if (e.getEvent() instanceof org.bukkit.event.Cancellable c) c.setCancelled(true);
+                            plugin.getGuiManager().openMainMenu(player);
+                        }));
     }
 
     @Override

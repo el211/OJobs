@@ -141,7 +141,10 @@ public class JobDetailGui implements InventoryProvider {
             contents.set(row(slot), col(slot),
                     ClickableItem.from(
                             ItemBuilder.of(mat).name(name).lore(lore).build(),
-                            e -> plugin.getGuiManager().openRewardsGui(player, job, 0)));
+                            e -> {
+                                cancelClick(e);
+                                plugin.getGuiManager().openRewardsGui(player, job, 0);
+                            }));
         }
 
         {
@@ -160,6 +163,7 @@ public class JobDetailGui implements InventoryProvider {
                         ClickableItem.from(
                                 ItemBuilder.of(mat).name(name).lore(lore).build(),
                                 e -> {
+                                    cancelClick(e);
                                     plugin.getPlayerDataManager().leaveJob(player, job);
                                     plugin.getGuiManager().openMainMenu(player);
                                 }));
@@ -170,13 +174,14 @@ public class JobDetailGui implements InventoryProvider {
                 String joinName = gui.getString("job-menu.join-name", "<green>Join %job_name%")
                         .replace("%job_name%", job.getDisplayName());
                 List<String> joinLore = new ArrayList<>(gui.getStringList("job-menu.join-lore"));
-                if (joinLore.isEmpty()) joinLore = List.of("<gray>Click to join this job!");
+                if (joinLore.isEmpty()) joinLore = new ArrayList<>(List.of("<gray>Click to join this job!"));
                 joinLore.replaceAll(l -> l.replace("%job_name%", job.getDisplayName()));
 
                 contents.set(row(slot), col(slot),
                         ClickableItem.from(
                                 ItemBuilder.of(mat).name(joinName).lore(joinLore).build(),
                                 e -> {
+                                    cancelClick(e);
                                     plugin.getPlayerDataManager().joinJob(player, job);
                                     plugin.getGuiManager().openJobMenu(player, job);
                                 }));
@@ -193,7 +198,10 @@ public class JobDetailGui implements InventoryProvider {
             contents.set(row(slot), col(slot),
                     ClickableItem.from(
                             ItemBuilder.of(mat).name(name).hideAttributes().build(),
-                            e -> plugin.getGuiManager().openMainMenu(player)));
+                            e -> {
+                                cancelClick(e);
+                                plugin.getGuiManager().openMainMenu(player);
+                            }));
         }
 
         if (plugin.getPrestigeManager().isEnabled() && joined) {
@@ -214,20 +222,26 @@ public class JobDetailGui implements InventoryProvider {
             if (canPrestige) b.glow();
 
             contents.set(row(slot), col(slot),
-                    ClickableItem.from(b.build(), e ->
-                            plugin.getPlayerDataManager().getPlayerData(player.getUniqueId()).ifPresent(d -> {
-                                if (plugin.getPrestigeManager().canPrestige(d, job)) {
-                                    plugin.getPrestigeManager().prestige(player, job);
-                                    plugin.getGuiManager().openJobMenu(player, job);
-                                } else {
-                                    MessageUtil.send(player, "prestige-not-ready", Map.of(
-                                            "job",   job.getDisplayName(),
-                                            "level", String.valueOf(job.getMaxLevel())));
-                                }
-                            })));
+                    ClickableItem.from(b.build(), e -> {
+                        cancelClick(e);
+                        plugin.getPlayerDataManager().getPlayerData(player.getUniqueId()).ifPresent(d -> {
+                            if (plugin.getPrestigeManager().canPrestige(d, job)) {
+                                plugin.getPrestigeManager().prestige(player, job);
+                                plugin.getGuiManager().openJobMenu(player, job);
+                            } else {
+                                MessageUtil.send(player, "prestige-not-ready", Map.of(
+                                        "job",   job.getDisplayName(),
+                                        "level", String.valueOf(job.getMaxLevel())));
+                            }
+                        });
+                    }));
         }
     }
 
     @Override
     public void update(Player player, InventoryContents contents) {}
+
+    private void cancelClick(fr.minuskube.inv.ItemClickData e) {
+        if (e.getEvent() instanceof org.bukkit.event.Cancellable c) c.setCancelled(true);
+    }
 }

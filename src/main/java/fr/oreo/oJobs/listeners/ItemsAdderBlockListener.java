@@ -22,7 +22,6 @@ public class ItemsAdderBlockListener implements Listener {
         this.plugin = plugin;
     }
 
-
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onCustomBlockBreak(CustomBlockBreakEvent event) {
         Player player = event.getPlayer();
@@ -33,7 +32,6 @@ public class ItemsAdderBlockListener implements Listener {
 
         processAction(player, world, namespacedId, "ia-block-break");
     }
-
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onFurnitureBreak(FurnitureBreakEvent event) {
@@ -48,7 +46,6 @@ public class ItemsAdderBlockListener implements Listener {
 
         processAction(player, world, namespacedId, "ia-furniture");
     }
-
 
     private void processAction(Player player, String world, String namespacedId, String actionMapKey) {
         Optional<PlayerData> dataOpt = plugin.getPlayerDataManager().getPlayerData(player.getUniqueId());
@@ -82,4 +79,5 @@ public class ItemsAdderBlockListener implements Listener {
                 .map(jd -> jd.getLevel() >= entry.getLevelRequirement())
                 .orElse(false);
     }
+
 }
